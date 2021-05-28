@@ -1,6 +1,7 @@
-const globals = Object
-  .keys(require('./support'))
-  .reduce((o, k) => ({ ...o, [k]: true }), { requirejs: true, assert: true });
+const globals = Object.keys(require('./support')).reduce((o, k) => ({ ...o, [k]: true }), {
+  requirejs: true,
+  assert: true,
+})
 
 module.exports = {
   extends: 'airbnb',
@@ -10,13 +11,18 @@ module.exports = {
   },
   globals,
   rules: {
+    semi: 0,
+    'arrow-parens': 0,
     'import/no-amd': 0,
     'import/no-dynamic-require': 0,
     'no-unused-vars': 0,
-    'object-curly-newline': [2, {
-      multiline: true,
-      consistent: true,
-      minProperties: 5,
-    }],
+    'object-curly-newline': [
+      2,
+      {
+        multiline: true,
+        consistent: true,
+        minProperties: 5,
+      },
+    ],
   },
-};
+}
