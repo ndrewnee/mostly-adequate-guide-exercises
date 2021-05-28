@@ -9,4 +9,5 @@
 // list.
 
 // joinMailingList :: Email -> Either String (IO ())
-const joinMailingList = undefined;
+const emailBlastToMailingList = compose(chain(emailBlast), addToMailingList)
+const joinMailingList = compose(map(emailBlastToMailingList), validateEmail)
